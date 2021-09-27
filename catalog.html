@@ -5,52 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="logo.png" alt="logo" height="125px" align="right">
-    <ul>
-        <h2>Меню</h2>
-        <a href="first_page.html">
-            <li><font color="black">Главная</font></li>
-        </a>
-        <a href="catalog.html" style="text-decoration: none;">
-            <li><font color="black">Каталог</font></li>
-        </a>
-        <a href="about_us.html">
-            <li><font color="black">О нас</font></li>
-        </a>
-    </ul>
-    <br>
-    <hr>
-    <h1 align="center"><i>Свечи</i></h1>
-    <hr>
-    <table cellspacing='50px' align="center">
-        <tr>
-            <td>
-                <a href="mixed_berry.html" style="text-decoration: none;">
-                    <img src="berry_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>Mixed berry</figcaption>
-                </a>
-            </td>
-            <td>
-                <a href="white_jasmine.html" style="text-decoration: none;">
-                    <img src="jasmine_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>White jasmine</figcaption>   
-                </a>
-            </td>
-            <td>
-                <a href="pure_lilen.html" style="text-decoration: none;">
-                    <img src="linen_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>Pure lilen</figcaption> 
-                </a>
-            </td>
-            <td>
-                <a href="island_spa.html" style="text-decoration: none;">
-                    <img src="island_spa_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>Island spa</figcaption>  
-                </a>
-            </td>
-        </tr>
-    </table>
+    <div class="wrapper">
+        <div class="header">
+            <img src="logo.png" alt="logo" height="125px" >
+            <div class="menu">
+                <ul class="table_menu">        
+                    <a href="first_page.html">
+                        <li>Главная</font></li>
+                    </a>
+                    <a href="catalog.html">
+                        <li>Каталог</font></li>
+                    </a>
+                    <a href="about_us.html">
+                        <li>О нас</font></li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h1 align="center"><i>Свечи</i></h1>
+        <hr>
+        <table class="table_catalog">
+            <tr>
+                <td>
+                    <div class="photo_catalog">
+                        <a href="mixed_berry.html">
+                            <img src="berry_candle.jpg" alt="logo" height="200px">
+                            <figcaption align='center'>Mixed berry</figcaption>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="photo_catalog">
+                        <a href="white_jasmine.html">
+                            <img src="jasmine_candle.jpg" alt="logo" height="200px">
+                            <figcaption align='center'>White jasmine</figcaption>   
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="photo_catalog">
+                        <a href="pure_lilen.html">
+                            <img src="linen_candle.jpg" alt="logo" height="200px">
+                            <figcaption align='center'>Pure lilen</figcaption> 
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="photo_catalog">
+                        <a href="island_spa.html">
+                            <img src="island_spa_candle.jpg" alt="logo" height="200px">
+                            <figcaption align='center'>Island spa</figcaption>  
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <div class="footer_description">
+            <p>Спасибо за посещение!</p>
+        </div>
+    </div>
 </body>
 </html>
