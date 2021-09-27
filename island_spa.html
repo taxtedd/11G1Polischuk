@@ -5,33 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Свеча "Island spa"</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="logo.png" alt="logo" height="125px" align="right">
-    <ul>
-        <h2>Меню</h2>
-        <a href="first_page.html">
-            <li><font color="black" style="text-decoration: none;">Главная</font></li>
-        </a>
-        <a href="catalog.html">
-            <li><font color="black">Каталог</font></li>
-        </a>
-        <a href="about_us.html">
-            <li><font color="black">О нас</font></li>
-        </a>
-    </ul>
-    <br>
-    <hr>
-    <img src="island_spa_candle.jpg" alt="logo" height="500px" style="float:left; border-right: 30px  solid rgb(255, 255, 255); border-bottom: 20px  solid rgb(255, 255, 255);border-left: 20px  solid rgb(255, 255, 255); border-top: 20px  solid rgb(255, 255, 255)" >
-    <div style="margin: 1px 20px;">
-        <h2>Свеча «island spa» с крышкой</h2>
-        <h2>Описание</h2>
-        Высота 8см
-        <br>
-        Диаметр 10см
-        <br>
-        Горит до 55 часов.
-        <p><b>Аромат:</b> An aromatic accord of eucalyptus, bergamot and green tea above a soft woody base.</p>
+    <div class="wrapper">
+        <div class="header">
+            <img src="logo.png" alt="logo" height="125px">
+            <div class="menu">
+                <ul class="table_menu">        
+                    <a href="first_page.html">
+                        <li>Главная</font></li>
+                    </a>
+                    <a href="catalog.html">
+                        <li>Каталог</font></li>
+                    </a>
+                    <a href="about_us.html">
+                        <li>О нас</font></li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="product">
+            <div class="photo">
+                <img src="island_spa_candle.jpg" alt="logo" height="500px" style="float:left;">
+            </div>
+            <div class="description">     
+                <h2>Свеча «island spa» с крышкой</h2>
+                <h2>Описание</h2>
+                Высота 8см
+                <br>
+                Диаметр 10см
+                <br>
+                Горит до 55 часов.
+                <p><b>Аромат:</b> An aromatic accord of eucalyptus, bergamot and green tea above a soft woody base.</p>
+            </div>
+            <br>
+            <a href="#" class="buy_button">В корзину</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_description">
+            <p>Спасибо за посещение!</p>
+        </div>
     </div>
 </body>
 </html>
