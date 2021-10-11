@@ -22,6 +22,9 @@ a{
     color: #954947;
    
 }
+.photo_catalog{
+    margin: 20px 25px;
+}
 .photo_catalog:hover{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -33,7 +36,7 @@ a{
     text-align: center;
 }
 .header{
-    height: 170px;
+    height: 150px;
     margin: 10px;
     padding: 5px;
 }
@@ -42,7 +45,7 @@ a{
     background-color: #F2E9E9;
     border:3px solid #F2E9E9;
 	border-radius: 5px;
-    max-width: 280px;
+    max-width: 400px;
 }
 ul.table_menu{ 
     margin: 0;
@@ -53,11 +56,11 @@ ul.table_menu li {
     margin: 10px;
     padding: 3px;
 }
-table.table_catalog{
-    margin: auto;
-}
-table.table_catalog td{
-    padding: 25px;
+.table_catalog{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 .product{
     padding-bottom:300px;
