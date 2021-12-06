@@ -1,5 +1,5 @@
---Логины и фамилии всех пользователей, которые делали хотя бы один заказ
-SELECT email, surname FROM users JOIN orders on users.id==orders.user_id;
+--Логины и имена всех пользователей, которые делали хотя бы один заказ
+SELECT email, name FROM users JOIN orders on users.id==orders.user_id GROUP BY users.id;
 
 --Для каждого товара вывести на каком складе он есть и в каком количестве
 SELECT products.name AS 'Наименование',(SELECT warehouses.name FROM warehouses WHERE warehouses.id=warehousing.warehouse) AS 'Склад', warehousing.quantity AS 'Количество' FROM products LEFT JOIN warehousing
