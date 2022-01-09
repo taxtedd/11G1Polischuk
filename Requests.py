@@ -1,4 +1,18 @@
 import sqlite3
+import unittest
+
+class TestUM(unittest.TestCase):
+    def setUp(self):
+        connection=sqlite3.connect('products.db')
+        self.cursor = connection.cursor()
+    def test_get_emails(self):
+        self.assertTrue(get_emails_and_names_of_customers(self.cursor),"Empty result")
+    def test_quantity_is_correct(self):
+        res=get_quantity_of_products(self.cursor)
+        for el in res:
+            self.assertTrue(isinstance(el[2],int),"Type of quantity data is incorrect")
+    def test_get_types(self):
+        self.assertTrue(get_types_of_ordered_products(self.cursor),"Empty result")
 
 
 # Логины и имена всех пользователей, которые делали хотя бы один заказ
@@ -24,7 +38,10 @@ req1 = get_emails_and_names_of_customers(cursor)
 req2 = get_quantity_of_products(cursor)
 req3 = get_types_of_ordered_products(cursor)
 
-for line in req1:
+for line in req2:
     print(*line)
+
+if __name__ == '__main__':
+    unittest.main()
 
 connection.close()
