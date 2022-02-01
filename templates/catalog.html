@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="wrapper">
         <div class="header">
-            <img src="logo.png" alt="logo" height="125px">
+            <img src="/static/logo.png" alt="logo" height="125px">
             <div class="menu">
                 <ul class="table_menu">        
-                    <a href="first_page.html">
+                    <a href="/">
                         <li>Главная</font></li>
                     </a>
-                    <a href="catalog.html">
+                    <a href="/catalog">
                         <li>Каталог</font></li>
                     </a>
-                    <a href="about_us.html">
+                    <a href="/about_us">
                         <li>О нас</font></li>
                     </a>
                 </ul>
@@ -30,26 +30,26 @@
         <hr>
         <div class="table_catalog">
             <div class="photo_catalog">
-                <a href="mixed_berry.html">
-                    <img src="berry_candle.jpg" alt="logo" height="200px">
+                <a href="/mixed_berry">
+                    <img src="/static/berry_candle.jpg" alt="logo" height="200px">
                     <figcaption align='center'>Mixed berry</figcaption>
                 </a>
             </div>
             <div class="photo_catalog">
-                <a href="white_jasmine.html">
-                    <img src="jasmine_candle.jpg" alt="logo" height="200px">
+                <a href="/white_jasmine">
+                    <img src="/static/jasmine_candle.jpg" alt="logo" height="200px">
                     <figcaption align='center'>White jasmine</figcaption>   
                 </a>
             </div>
             <div class="photo_catalog">
-                <a href="pure_lilen.html">
-                    <img src="linen_candle.jpg" alt="logo" height="200px">
+                <a href="/pure_lilen">
+                    <img src="/static/linen_candle.jpg" alt="logo" height="200px">
                     <figcaption align='center'>Pure lilen</figcaption> 
                 </a>
             </div>
             <div class="photo_catalog">
-                <a href="island_spa.html">
-                    <img src="island_spa_candle.jpg" alt="logo" height="200px">
+                <a href="/island_spa">
+                    <img src="/static/island_spa_candle.jpg" alt="logo" height="200px">
                     <figcaption align='center'>Island spa</figcaption>  
                 </a>
             </div>

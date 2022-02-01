@@ -101,7 +101,7 @@ ul.table_menu li {
 .feedback{
     margin: 25px 15px;
 }
-@media screen and (max-width: 900px) {
+/*@media screen and (max-width: 900px) {
     body {
         background-color: #333333cc;
         color: #ffffff;
@@ -122,4 +122,4 @@ ul.table_menu li {
         color: #ffffff;
         background-color: #ffffff;
     }
-}
+}*/
