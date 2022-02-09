@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="wrapper">
-        <div class="header">
-            <img src="/static/logo.png" alt="logo" height="125px">
-            <div class="menu">
-                <ul class="table_menu">        
-                    <a href="/">
-                        <li>Главная</font></li>
-                    </a>
-                    <a href="/catalog">
-                        <li>Каталог</font></li>
-                    </a>
-                    <a href="/about_us">
-                        <li>О нас</font></li>
-                    </a>
-                </ul>
-            </div>
-        </div>
+{% extends "base.html" %}
+{% block title %} {{super()}}Каталог{% endblock %}
+{% block content %}
         <hr>
         <h1 align="center"><i>Свечи</i></h1>
         <hr>
@@ -54,11 +30,4 @@
                 </a>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <div class="footer_description">
-            <p>Спасибо за посещение!</p>
-        </div>
-    </div>
-</body>
-</html>
+{% endblock %}

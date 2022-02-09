@@ -37,8 +37,11 @@ hr{
     transform: scale(1.2);
 }
 .container{
-    width: 80%;
-    margin:0 auto;
+    width: 100%;
+    min-width: 1000px;
+    text-align: center;
+}
+.info{
     text-align: center;
 }
 .header{
@@ -98,8 +101,20 @@ ul.table_menu li {
 .footer_description{
     padding-top: 90px;
 }
-.feedback{
+.all_feedback{
     margin: 25px 15px;
+}
+.feedback{
+    border-width:1;
+    border-radius: 0.25rem;
+    border-color: #0d6efd;
+    border-style: solid;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.text{
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
 }
 /*@media screen and (max-width: 900px) {
     body {

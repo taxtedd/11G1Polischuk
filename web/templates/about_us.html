@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %} {{super()}}О нас{% endblock %}
+{% block content %}
+        <hr>
+        <center>
+            <h2>Наше местоположение:</h2>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A02a92600584488e615599b069feb14e78620104c93a24fdd53d17966bbd9222f&amp;source=constructor" width="80%" height="540" frameborder="0"></iframe>
+        </center>
+        <br>
+        <hr>
+        <div class="all_feedback">
+            <h2 align='center'>Оставьте отзыв:</h2>
+            <form method="post">
+                <label for="inputEmail">ФИО:</label>
+                <div class="row">
+                    <div class="col">
+                      <input type="text" name="surname" class="form-control" placeholder="Фамилия">
+                    </div>
+                    <div class="col">
+                      <input type="text" name="name" class="form-control" placeholder="Имя">
+                    </div>
+                </div>
+                <div style="margin: 6px 1px;">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" >
+                </div>
+                <label for="Textarea">Оставьте ваш отзыв, пожелания или предложения.</label>
+                <textarea name="text" class="form-control" id="Textarea" rows="3"></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+            {% if feedback %}
+                <hr>
+                <div class="feedback-area">
+                    <h2 align='center'>Отзывы:</h2>
+                    {% for feed in feedback %}
+                    <div class="feedback">
+                        <div class="surname">{{feed.surname+' '+feed.name+':'}}</div>
+                        <div class="text">{{feed.text}}</div>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

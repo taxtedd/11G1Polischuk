@@ -1,14 +1,26 @@
 from flask import *
-app = Flask(__name__)
-
+from models import *
+from init import app
 
 @app.route('/')
 def first_page():
     return render_template("first_page.html")
 
-@app.route('/about_us')
+@app.route('/about_us', methods=['GET', 'POST'])
 def about_page():
-    return render_template("about_us.html")
+    feedback = Feedback.query.all()
+    if request.method == 'POST':
+        surname = request.form.get('surname')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        text = request.form.get('text')
+        if email != '' and text != '':
+            f = Feedback(surname=surname, name=name, email=email, text=text)
+            db.session.add(f)
+            db.session.commit()
+            feedback.append(f)
+    print(feedback)
+    return render_template("about_us.html", feedback=feedback)
 
 @app.route('/catalog')
 def catalog_page():

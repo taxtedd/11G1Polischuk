@@ -1,10 +1,14 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from init import db
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///testdb.db'
-db = SQLAlchemy(app)
+class Feedback(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+    surname = db.Column(db.String(80))
+    email = db.Column(db.String(80), nullable=False)
+    text = db.Column(db.String(256))
 
+    def __repr__(self):
+        return f'feedback name: {self.email}'
 
 class Types(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -12,7 +16,6 @@ class Types(db.Model):
 
     def __repr__(self):
         return f'{self.id} {self.name}'
-
 
 class Products(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -61,7 +64,7 @@ class Users(db.Model):
     birth_date = db.Column(db.String(80))
 
     def __repr__(self):
-        return f'{self.id} - {self.email}, {self.phone} - {self.surname}'
+        return f'{self.id} - {self.email} - {self.phone} - {self.surname}'
 
 
 class Orders(db.Model):
@@ -77,20 +80,3 @@ class Orders(db.Model):
 
     def __repr__(self):
         return f'{self.id} - Пользователь: {self.user_id} Заказ на сумму: {self.total_amount}'
-
-
-db.create_all()
-create_type = Types(name="Парафиновые свечи")
-db.session.add(create_type)
-product = Products(name="Mixed berry candle", price=500, discount=0,details="Аромат: Rich cherries start this sweet gourmand fragrance, finished with silky almonds and creamy vanilla.", type=create_type)
-db.session.add(product)
-warehouse = Warehouses(name="Склад 1", address="г.Москва, ул.1-я Крылатская, д.17")
-db.session.add(warehouse)
-create_warehousing = Warehousing(product_id=1, warehouse_id=1, quantity=50)
-db.session.add(create_warehousing)
-user = Users(email='ivanov@gmail.com', password='123', surname='Иванов', name='Иван', patronymic='Иванович', city='Москва', address='Балаклавский проспект, дом 6А', phone='8(916)111-11-11', registration_date='2021-05-12', birth_date='2003-04-03')
-db.session.add(user)
-order = Orders(user=1,order_date='2021-11-17 15:00', total_amount=1000,product_id=1,quantity=2,discount=0)
-db.session.add(order)
-db.session.commit()
-print(Orders.query.all())
