@@ -1,33 +1,16 @@
 {% extends "base.html" %}
 {% block title %} {{super()}}Каталог{% endblock %}
 {% block content %}
-        <hr>
         <h1 align="center"><i>Свечи</i></h1>
         <hr>
         <div class="table_catalog">
-            <div class="photo_catalog">
-                <a href="/mixed_berry">
-                    <img src="/static/berry_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>Mixed berry</figcaption>
-                </a>
-            </div>
-            <div class="photo_catalog">
-                <a href="/white_jasmine">
-                    <img src="/static/jasmine_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>White jasmine</figcaption>   
-                </a>
-            </div>
-            <div class="photo_catalog">
-                <a href="/pure_lilen">
-                    <img src="/static/linen_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>Pure lilen</figcaption> 
-                </a>
-            </div>
-            <div class="photo_catalog">
-                <a href="/island_spa">
-                    <img src="/static/island_spa_candle.jpg" alt="logo" height="200px">
-                    <figcaption align='center'>Island spa</figcaption>  
-                </a>
-            </div>
+            {% for item in items %}
+                <div class="photo_catalog">
+                    <a href="/item/{{item.name}}">
+                        <img src="{{ url_for('static', filename='/'+item.image) }}" alt="logo" height="200px">
+                        <h4>{{item.name}}</h4>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
 {% endblock %}

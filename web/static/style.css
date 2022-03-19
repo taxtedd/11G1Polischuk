@@ -30,6 +30,7 @@ hr{
 }
 .photo_catalog{
     margin: 20px 25px;
+    text-align: center;
 }
 .photo_catalog:hover{
     -webkit-transform: scale(1.2);
@@ -43,6 +44,7 @@ hr{
 }
 .info{
     text-align: center;
+    margin-bottom: 280px;
 }
 .header{
     height: 150px;
@@ -72,10 +74,11 @@ ul.table_menu li {
     padding: 10px;
 }
 .product{
-    padding-bottom:300px;
+    padding-bottom:370px;
+    margin-bottom:50px;
 }
 .photo img{
-    margin: 20px 5px;
+    margin: 0px 5px;
     padding: 0 20px;
 }
 .btn-outline-success{

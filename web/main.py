@@ -1,10 +1,14 @@
 from flask import *
 from models import *
+from datetime import datetime, timedelta
 from init import app
 
 @app.route('/')
 def first_page():
-    return render_template("first_page.html")
+    resp = make_response(render_template("first_page.html"))
+    if not request.cookies.get('test'):
+       resp.set_cookie('test', 'testvalue', expires=datetime.now()+timedelta(minutes=30))
+    return resp
 
 @app.route('/about_us', methods=['GET', 'POST'])
 def about_page():
@@ -24,23 +28,13 @@ def about_page():
 
 @app.route('/catalog')
 def catalog_page():
-    return render_template("catalog.html")
+    items = Items.query.all()
+    return render_template("catalog.html", items=items)
 
-@app.route('/island_spa')
-def island_spa_page():
-    return render_template("island_spa.html")
-
-@app.route('/mixed_berry')
-def mixed_bery_page():
-    return render_template("mixed_berry.html")
-
-@app.route('/pure_lilen')
-def pure_lilen_page():
-    return render_template("pure_lilen.html")
-
-@app.route('/white_jasmine')
-def white_jasmine_page():
-    return render_template("white_jasmine.html")
+@app.route('/item/<item>')
+def show_item(item):
+    item = escape(item)
+    return render_template('item.html', item=Items.query.filter_by(name=item).one())
 
 if __name__ == '__main__':
     app.run(debug=True)
